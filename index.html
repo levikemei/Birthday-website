@@ -1,448 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#7c3aed">
-  <title>Happy Birthday Levi!</title>
-  <style>
-    :root {
-      --purple: #7c3aed;
-      --pink: #ec4899;
-      --gold: #fbbf24;
-      --green: #168447;
-      --dark: #251044;
-    }
-
-    * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: white;
-      background: linear-gradient(135deg, #251044, #6d28d9, #db2777);
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    button, input { font: inherit; }
-
-    .hero {
-      position: relative;
-      min-height: 88vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 55px 20px;
-      overflow: hidden;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 750px;
-    }
-
-    .eyebrow {
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      font-size: 12px;
-      font-weight: bold;
-      color: #fde68a;
-    }
-
-    h1 {
-      font-size: clamp(42px, 10vw, 82px);
-      margin: 18px 0;
-      line-height: 1.05;
-      text-shadow: 0 5px 25px #16052b80;
-    }
-
-    h1 span { color: #fcd34d; }
-
-    .hero p {
-      font-size: clamp(16px, 3vw, 21px);
-      line-height: 1.7;
-      color: #f5eaff;
-    }
-
-    .birthday-icon {
-      font-size: clamp(65px, 12vw, 100px);
-      animation: bounce 2s infinite;
-    }
-
-    .primary-button {
-      display: inline-block;
-      border: none;
-      border-radius: 999px;
-      padding: 15px 25px;
-      margin-top: 18px;
-      background: linear-gradient(90deg, #fbbf24, #fb7185);
-      color: #351044;
-      font-weight: bold;
-      text-decoration: none;
-      cursor: pointer;
-      box-shadow: 0 8px 25px #0003;
-      transition: transform .2s;
-    }
-
-    .primary-button:hover { transform: translateY(-3px); }
-
-    .balloon {
-      position: absolute;
-      bottom: -150px;
-      width: 45px;
-      height: 58px;
-      border-radius: 50%;
-      opacity: .7;
-      animation: floatUp 12s linear infinite;
-      pointer-events: none;
-    }
-
-    .balloon::after {
-      content: "";
-      position: absolute;
-      width: 1px;
-      height: 45px;
-      background: #ffffff80;
-      left: 50%;
-      top: 57px;
-    }
-
-    .b1 { left: 8%; background: #fb7185; animation-delay: 0s; }
-    .b2 { left: 25%; background: #fbbf24; animation-delay: 3s; }
-    .b3 { right: 22%; background: #34d399; animation-delay: 5s; }
-    .b4 { right: 7%; background: #60a5fa; animation-delay: 1s; }
-
-    section { scroll-margin-top: 20px; }
-
-    .content-section {
-      padding: 55px 18px;
-      text-align: center;
-    }
-
-    .section-title {
-      font-size: clamp(28px, 5vw, 42px);
-      margin: 0 0 15px;
-    }
-
-    .intro {
-      max-width: 650px;
-      margin: 0 auto 30px;
-      color: #f3e8ff;
-      line-height: 1.7;
-    }
-
-    .surprise-card {
-      max-width: 650px;
-      margin: 0 auto;
-      padding: 28px 22px;
-      background: #ffffff14;
-      border: 1px solid #ffffff35;
-      border-radius: 22px;
-      backdrop-filter: blur(8px);
-    }
-
-    #surpriseMessage {
-      display: none;
-      line-height: 1.8;
-      margin-top: 20px;
-      color: #fff7cc;
-    }
-
-    .gift-section {
-      padding: 45px 16px 60px;
-      background: #fff7ff;
-      color: #251044;
-    }
-
-    .gift-card {
-      max-width: 440px;
-      margin: 0 auto;
-      padding: 26px 22px;
-      background: white;
-      border-radius: 22px;
-      box-shadow: 0 12px 40px #3b07641c;
-    }
-
-    .gift-card h2 { margin-top: 0; }
-
-    .gift-card p {
-      color: #62556f;
-      line-height: 1.6;
-    }
-
-    .gift-card label {
-      display: block;
-      text-align: left;
-      margin: 16px 0 7px;
-      font-size: 14px;
-      font-weight: bold;
-    }
-
-    .gift-card input {
-      width: 100%;
-      padding: 13px;
-      border: 1px solid #d8cce5;
-      border-radius: 10px;
-      outline-color: var(--purple);
-      background: #fff;
-      color: #251044;
-    }
-
-    .pay-button {
-      display: block;
-      width: 100%;
-      padding: 15px;
-      margin-top: 20px;
-      background: var(--green);
-      color: white;
-      border: none;
-      border-radius: 10px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .pay-button:disabled {
-      opacity: .6;
-      cursor: wait;
-    }
-
-    #paymentMessage {
-      overflow-wrap: anywhere;
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    .security-note {
-      font-size: 12px !important;
-      color: #776b83 !important;
-    }
-
-    footer {
-      padding: 24px 12px;
-      text-align: center;
-      background: #1b0b30;
-      color: #f3e8ff;
-      font-size: 13px;
-    }
-
-    @keyframes floatUp {
-      from { transform: translateY(0) rotate(0); }
-      to { transform: translateY(-125vh) rotate(18deg); }
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0) rotate(-4deg); }
-      50% { transform: translateY(-12px) rotate(4deg); }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Levi!</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;color:white;text-align:center;background:linear-gradient(135deg,#190b36,#6a176e,#ed5578);min-height:100vh}
+header{padding:45px 18px 25px}
+.cake{font-size:75px;animation:bounce 1.5s infinite}
+h1{font-size:clamp(35px,9vw,60px);margin:12px 0;color:#ffe58a;text-shadow:0 0 18px #ff75bc}
+p{line-height:1.7}
+section{max-width:560px;margin:18px auto;padding:25px 20px;width:92%;background:#ffffff16;border:1px solid #ffffff45;border-radius:22px;box-shadow:0 8px 28px #0003}
+button{background:#ffcf70;color:#381344;border:0;border-radius:12px;padding:14px 20px;font-weight:bold;font-size:16px;cursor:pointer;margin:7px}
+input{width:100%;padding:14px;margin:8px 0;border-radius:10px;border:1px solid #ddd;font-size:16px}
+.gift{font-size:48px}
+a{color:#ffe58a}
+footer{padding:25px}
+#surprise{display:none;font-size:20px;color:#ffe58a}
+@keyframes bounce{50%{transform:translateY(-12px)}}
+.balloon{position:fixed;bottom:-80px;font-size:30px;pointer-events:none;animation:float 9s linear infinite;z-index:-1}
+@keyframes float{to{transform:translateY(-120vh) rotate(20deg)}}
+</style>
 </head>
 <body>
-
-  <header class="hero">
-    <div class="balloon b1"></div>
-    <div class="balloon b2"></div>
-    <div class="balloon b3"></div>
-    <div class="balloon b4"></div>
-
-    <div class="hero-content">
-      <div class="birthday-icon" aria-hidden="true">🎂</div>
-      <div class="eyebrow">A special day • 20 October</div>
-      <h1>Happy Birthday<br><span>Levi!</span></h1>
-      <p>
-        Today is a celebration of life, love, happiness
-        and the beautiful journey ahead. May this new
-        chapter bring you success, peace and endless blessings.
-      </p>
-      <a class="primary-button" href="#surprise">Open Your Surprise ✨</a>
-    </div>
-  </header>
-
-  <main>
-    <section class="content-section" id="surprise">
-      <h2 class="section-title">A Special Message 💌</h2>
-      <p class="intro">
-        Every birthday is a reminder that another year is
-        another opportunity to grow, dream and achieve more.
-      </p>
-
-      <div class="surprise-card">
-        <div style="font-size:45px" aria-hidden="true">🎁</div>
-        <h3>Ready for your birthday surprise?</h3>
-        <p>Tap below to reveal your special message.</p>
-        <button class="primary-button" id="surpriseButton" type="button">
-          Reveal Message
-        </button>
-        <p id="surpriseMessage">
-          Dear Levi, may your new year of life be filled with
-          courage, good health, meaningful friendships,
-          open doors and dreams coming true. Keep believing
-          in yourself and keep moving forward. Happy Birthday! ❤️
-        </p>
-      </div>
-    </section>
-
-    <section class="gift-section" id="mpesa-gift">
-      <div class="gift-card">
-        <div style="font-size:45px" aria-hidden="true">🎁</div>
-        <h2>Send Levi a Birthday Gift</h2>
-        <p>
-          Want to send a birthday gift through M-PESA?
-          Enter your number and choose an amount below.
-        </p>
-
-        <form id="giftForm">
-          <label for="phone">M-PESA phone number</label>
-          <input
-            id="phone"
-            type="tel"
-            inputmode="tel"
-            autocomplete="tel"
-            placeholder="07XXXXXXXX"
-            maxlength="16"
-            required
-          >
-
-          <label for="amount">Gift amount (KSh)</label>
-          <input
-            id="amount"
-            type="number"
-            min="1"
-            max="10000"
-            step="1"
-            value="100"
-            required
-          >
-
-          <button class="pay-button" id="payButton" type="submit">
-            Pay with M-PESA
-          </button>
-        </form>
-
-        <p id="paymentMessage" role="status" aria-live="polite"></p>
-
-        <p class="security-note">
-          Only approve a payment you intentionally requested.
-          Never share your M-PESA PIN. Sandbox mode does not
-          transfer real money.
-        </p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    &copy; 2026 Made with ❤️ by Levi. All rights reserved.
-  </footer>
-
-  <script>
-    // IMPORTANT:
-    // Replace this with your deployed backend's HTTPS URL.
-    // Do not put Daraja secrets or passkeys in this file.
-    const API_BASE = "https://YOUR-BACKEND-URL";
-
-    const surpriseButton = document.getElementById("surpriseButton");
-    const surpriseMessage = document.getElementById("surpriseMessage");
-
-    surpriseButton.addEventListener("click", () => {
-      surpriseMessage.style.display = "block";
-      surpriseButton.textContent = "Your Surprise ❤️";
-      surpriseButton.disabled = true;
-    });
-
-    const form = document.getElementById("giftForm");
-    const payButton = document.getElementById("payButton");
-    const paymentMessage = document.getElementById("paymentMessage");
-
-    form.addEventListener("submit", async (event) => {
-      event.preventDefault();
-
-      const phone = document.getElementById("phone").value.trim();
-      const amount = Number(document.getElementById("amount").value);
-
-      if (!phone) {
-        paymentMessage.textContent = "Please enter your M-PESA number.";
-        return;
-      }
-
-      if (!Number.isInteger(amount) || amount < 1 || amount > 10000) {
-        paymentMessage.textContent =
-          "Enter a whole-number amount between KSh 1 and KSh 10,000.";
-        return;
-      }
-
-      if (API_BASE.includes("YOUR-BACKEND-URL")) {
-        paymentMessage.textContent =
-          "M-PESA setup is not finished yet. The secure backend must be deployed and connected first.";
-        return;
-      }
-
-      payButton.disabled = true;
-      paymentMessage.textContent = "Requesting M-PESA prompt…";
-
-      try {
-        const response = await fetch(`${API_BASE}/api/stkpush`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ phone, amount })
-        });
-
-        const data = await response.json();
-
-        if (!response.ok) {
-          throw new Error(data.error || "The payment request failed.");
-        }
-
-        paymentMessage.textContent =
-          data.message || "Check your phone for the M-PESA prompt.";
-
-        // Check for a backend callback update.
-        for (let i = 0; i < 12; i++) {
-          await new Promise(resolve => setTimeout(resolve, 5000));
-
-          const statusResponse = await fetch(
-            `${API_BASE}/api/status/${encodeURIComponent(data.checkoutRequestId)}`
-          );
-
-          if (!statusResponse.ok) continue;
-
-          const statusData = await statusResponse.json();
-
-          if (statusData.status === "failed") {
-            paymentMessage.textContent =
-              "The payment was cancelled or failed. You can try again.";
-            return;
-          }
-
-          if (statusData.status === "callback_success_unverified") {
-            paymentMessage.textContent =
-              "Payment callback received. Final transaction verification is still required.";
-            return;
-          }
-        }
-
-        paymentMessage.textContent =
-          "The request was sent. Confirmation may take longer; check your M-PESA messages.";
-      } catch (error) {
-        paymentMessage.textContent =
-          error.message || "Unable to connect to the payment service.";
-      } finally {
-        payButton.disabled = false;
-      }
-    });
-  </script>
-
+<div class="balloon" style="left:8%">🎈</div>
+<div class="balloon" style="left:35%;animation-delay:3s">🎈</div>
+<div class="balloon" style="left:70%;animation-delay:1s">🎈</div>
+<header>
+<div class="cake">🎂</div>
+<p>✨ TODAY IS A SPECIAL DAY ✨</p>
+<h1>Happy Birthday, Levi!</h1>
+<p>Celebrating life, blessings, dreams and another beautiful year.</p>
+<button onclick="document.getElementById('surprise').style.display='block'">💌 Open Your Surprise</button>
+<p id="surprise">May your new year bring happiness, good health, success and endless blessings! ❤️</p>
+</header>
+<section>
+<h2>🥳 Birthday Wishes</h2>
+<p>Thank you for being part of my journey. Your love, prayers and kind wishes mean so much. Let's make this year amazing!</p>
+<p>🎉 🎁 🎊 🥂 🎉</p>
+</section>
+<section id="gift">
+<div class="gift">🎁</div>
+<h2>Send Levi a Birthday Gift</h2>
+<p>Your gift, no matter the amount, will be truly appreciated. ❤️</p>
+<form id="giftForm">
+<label for="recipient">My M-PESA recipient phone number</label>
+<input id="recipient" type="tel" placeholder="Enter Levi's M-PESA number" required>
+<label for="amount">Gift amount (KSh)</label>
+<input id="amount" type="number" min="1" step="1" placeholder="Enter any amount" required>
+<button type="submit">🎁 Send Gift</button>
+</form>
+<div id="paymentInstructions" style="display:none">
+<p><strong>Complete your gift securely:</strong></p>
+<p>1. Open your official M-PESA menu or app.</p>
+<p>2. Select Send Money and enter the recipient number shown below.</p>
+<p>3. Enter your chosen amount, verify the recipient's name, then confirm using your M-PESA PIN privately.</p>
+<p id="paymentSummary"></p>
+<p><strong>No payment has been sent by this website.</strong> You must complete it in M-PESA yourself.</p>
+<button onclick="copyPaymentDetails()">Copy payment details</button>
+</div>
+</section>
+<section>
+<h2>💖 Thank You!</h2>
+<p>Your presence, prayers and kindness are the best gifts of all.</p>
+</section>
+<footer>Made with ❤️ for Levi | Birthday Celebration 🎂</footer>
+<script>
+document.getElementById('giftForm').addEventListener('submit',function(e){
+e.preventDefault();
+const phone=document.getElementById('recipient').value.trim();
+const amount=Number(document.getElementById('amount').value);
+if(!phone||!Number.isFinite(amount)||amount<1){alert('Please enter a recipient number and a valid amount.');return;}
+document.getElementById('paymentSummary').textContent='Recipient number: '+phone+' | Gift amount: KSh '+amount.toLocaleString('en-KE');
+document.getElementById('paymentInstructions').style.display='block';
+});
+function copyPaymentDetails(){
+const phone=document.getElementById('recipient').value.trim();
+const amount=document.getElementById('amount').value;
+const details='Birthday gift for Levi. Recipient M-PESA number: '+phone+'. Amount: KSh '+amount+'. Open M-PESA Send Money and verify the recipient before confirming.';
+if(navigator.clipboard&&navigator.clipboard.writeText){
+navigator.clipboard.writeText(details).then(()=>alert('Payment details copied. No payment has been sent.'));
+}else{alert(details);}
+}
+</script>
 </body>
 </html>
