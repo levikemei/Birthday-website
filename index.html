@@ -1,1 +1,665 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#210817">
+  <meta name="description" content="Celebrate life, growth and purpose with Levi. Happy Birthday and Happy Mashujaa Day!">
+  <title>Happy Birthday Levi 💖 | Happy Mashujaa Day 🇰🇪</title>
+
+  <style>
+    :root {
+      --wine: #210817;
+      --wine2: #3a0b27;
+      --gold: #f4cc72;
+      --gold2: #dca83e;
+      --pink: #f47ba6;
+      --cream: #fff0f3;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--cream);
+      font-family: Georgia, "Times New Roman", serif;
+      text-align: center;
+      background: radial-gradient(
+        ellipse at top,
+        #701b47 0%,
+        var(--wine2) 36%,
+        #13040e 100%
+      );
+      min-height: 100vh;
+    }
+
+    .wrap {
+      width: min(760px, 100%);
+      margin: auto;
+      padding: 26px 15px 35px;
+    }
+
+    .panel, .card {
+      border: 1px solid rgba(244,204,114,.65);
+      border-radius: 28px;
+      background: rgba(25,3,17,.56);
+      box-shadow: 0 0 38px rgba(244,204,114,.07);
+      padding: clamp(22px, 5vw, 44px);
+      margin-bottom: 22px;
+    }
+
+    .hero {
+      padding-top: 45px;
+      padding-bottom: 40px;
+      animation: heroEnter 1s ease-out both;
+    }
+
+    .heart {
+      color: var(--pink);
+      font-size: 48px;
+      line-height: 1;
+      margin-bottom: 26px;
+      animation: heartBeat 1.8s ease-in-out infinite;
+    }
+
+    .cake {
+      font-size: 76px;
+      margin: 25px 0;
+      animation: cakeBounce 2s ease-in-out infinite;
+      transform-origin: center bottom;
+    }
+
+    .card {
+      animation: cardEnter .8s ease-out both;
+    }
+
+    @keyframes heroEnter {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes cardEnter {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes heartBeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.18); }
+    }
+
+    @keyframes cakeBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    h1 {
+      color: var(--gold);
+      font-size: clamp(43px, 9vw, 70px);
+      line-height: 1.08;
+      font-weight: 500;
+      margin: 23px 0;
+    }
+
+    h2 {
+      color: var(--gold);
+      font-size: clamp(25px, 5vw, 34px);
+      font-weight: 500;
+      margin: 12px 0 18px;
+    }
+
+    h3 {
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    p {
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .quote {
+      font-size: clamp(20px, 4.5vw, 27px);
+      line-height: 1.6;
+      font-style: italic;
+      margin: 24px 0 30px;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 999px;
+      padding: 15px 24px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: linear-gradient(110deg, #ffe59b, var(--gold2));
+      color: #351020;
+      font: 17px Georgia, serif;
+      text-decoration: none;
+      cursor: pointer;
+      margin: 5px;
+      transition: transform .2s;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn.secondary {
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px solid rgba(244,204,114,.4);
+      margin: 36px 0 25px;
+    }
+
+    section { scroll-margin-top: 16px; }
+
+    .emoji {
+      font-size: 28px;
+      letter-spacing: .18em;
+    }
+
+    .live-clock {
+      border: 1px solid var(--gold);
+      border-radius: 20px;
+      padding: 22px 14px;
+      margin: 20px auto;
+      background: rgba(43,10,30,.9);
+      max-width: 500px;
+    }
+
+    .clock-label {
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    #live-time {
+      color: var(--gold);
+      font-size: clamp(32px, 8vw, 48px);
+      font-weight: bold;
+      margin: 12px 0;
+      font-variant-numeric: tabular-nums;
+    }
+
+    #live-date {
+      font-size: clamp(15px, 4vw, 18px);
+    }
+
+    .small, .notice {
+      font-size: 13px;
+      color: #e8cbd7;
+    }
+
+    .music-box {
+      border: 1px solid rgba(244,204,114,.3);
+      border-radius: 20px;
+      padding: 22px;
+      background: rgba(255,255,255,.03);
+      margin-top: 18px;
+    }
+
+    .music-icon { font-size: 42px; }
+
+    .video-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 16px;
+      margin: 18px auto;
+      background: #000;
+    }
+
+    .video-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      margin: 15px 0 7px;
+      color: var(--gold);
+      font-size: 15px;
+    }
+
+    input, textarea {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid rgba(244,204,114,.5);
+      background: #190511;
+      color: white;
+      padding: 13px;
+      font: 16px Arial, sans-serif;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .checkrow {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      text-align: left;
+      margin: 14px 0;
+      font: 13px Arial, sans-serif;
+      color: #f4dce6;
+    }
+
+    .checkrow input {
+      width: auto;
+      margin-top: 3px;
+    }
+
+    #response {
+      min-height: 24px;
+      color: var(--gold);
+    }
+
+    .footer {
+      padding: 8px;
+      color: #e9c6d5;
+      font-size: 14px;
+    }
+
+    .toplink { color: var(--gold); }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+
+    <header class="panel hero" id="top">
+      <div class="heart">♡</div>
+
+      <div class="eyebrow">A little invitation from the heart</div>
+
+      <h1>Celebrate<br>with Levi</h1>
+
+      <div class="cake">🎂 ✨</div>
+
+      <p class="quote">
+        “Another year, another blessing.<br>
+        A grateful heart, a beautiful beginning.”
+      </p>
+
+      <a class="btn" href="#celebration">Open the Celebration ✨</a>
+
+      <hr>
+
+      <div class="eyebrow">Welcome to my special day</div>
+
+      <p>
+        Thank you for being part of my story. May love, joy and God's
+        blessings find us all. 💛
+      </p>
+
+      <div class="live-clock">
+        <div class="clock-label">🇰🇪 Kenya Time · East Africa Time</div>
+        <div id="live-time">Loading time...</div>
+        <div id="live-date">Loading date...</div>
+        <p class="small">Live local time in Kenya</p>
+      </div>
+    </header>
+
+    <section class="card" id="celebration">
+      <div class="eyebrow">Celebrating life, growth and purpose</div>
+      <h2>🎂 Happy Birthday to Levi! 💖</h2>
+      <h2>🇰🇪 Happy Mashujaa Day! 🇰🇪</h2>
+      <div class="emoji">🎂 🌹 🎈 🇰🇪</div>
+
+      <p>
+        Today I celebrate another year of life. I am Levi, and my heart
+        is grateful to God for bringing me this far. Every lesson, every
+        challenge, every prayer and every person who has been part of my
+        journey has helped shape the person I am becoming.
+      </p>
+
+      <p>
+        <strong>A new chapter. A grateful heart. A future full of hope.</strong>
+      </p>
+    </section>
+
+    <section class="card" id="music">
+      <div class="eyebrow">A soundtrack for this special moment</div>
+      <h2>🎵 A Birthday Song 🎶</h2>
+
+      <div class="music-box">
+        <div class="music-icon">🎧 💖 🎶</div>
+        <h3>Birthday Prayer — Godswill James</h3>
+
+        <p class="small">
+          A birthday blessing for a beautiful new chapter.
+        </p>
+
+        <div class="video-frame">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/IiNZeHV0an4"
+            title="Birthday Prayer — Godswill James"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <p class="notice">
+          Tap the play button above to watch the birthday song.
+        </p>
+      </div>
+    </section>
+
+    <section class="card" id="blessing">
+      <div class="eyebrow">God's word for my new chapter</div>
+      <h2>A Blessing for My Life 🙏</h2>
+
+      <p class="quote">
+        “For I know the plans I have for you,” declares the LORD,
+        “plans to prosper you and not to harm you, plans to give you
+        hope and a future.”
+      </p>
+
+      <p class="small">Jeremiah 29:11 — NIV</p>
+
+      <p>
+        Heavenly Father, thank You for the precious gift of life and
+        for carrying me through every season. Thank You for the visible
+        blessings and the quiet victories that only You and I know about.
+      </p>
+
+      <p>
+        As I begin another year, give me wisdom when I must make difficult
+        decisions, courage when I feel afraid, strength when life becomes
+        heavy, and faith when I cannot see what lies ahead. Bless my family,
+        protect the people I love, and help me become a blessing to others.
+      </p>
+
+      <p>
+        May this new chapter be filled with purpose, peace, good health,
+        meaningful friendships and opportunities to grow. Keep my heart
+        humble and close to You. Amen. 💛
+      </p>
+    </section>
+
+    <section class="card" id="message">
+      <div class="eyebrow">A note from my heart</div>
+      <h2>A New Chapter, A Grateful Heart ❤️</h2>
+
+      <p>
+        Today is more than just my birthday. It is a reminder of how far
+        God has brought me, the battles He has helped me overcome, the
+        silent prayers He has heard, and the blessings that have kept
+        me going even when the journey was not easy.
+      </p>
+
+      <p>
+        Life has taught me that growing does not mean having everything
+        figured out. Sometimes it means standing up after disappointment,
+        learning from mistakes, and finding the courage to try again.
+        I am still growing, still learning, still dreaming and still
+        trusting God with my future.
+      </p>
+
+      <p>
+        To everyone who has been part of my story, through a prayer,
+        a kind word, a phone call, a visit or encouragement, thank you.
+        You may never fully know how much your presence has meant to me.
+      </p>
+
+      <p>
+        As I step into this new chapter, I pray for wisdom, courage,
+        strength, good health for my loved ones, and a heart that never
+        forgets where it came from.
+      </p>
+
+      <p>
+        May this year bring growth where there has been struggle, peace
+        where there has been worry, light where there has been uncertainty,
+        and beautiful opportunities where there have been closed doors.
+      </p>
+
+      <p>
+        <strong>
+          Happy birthday to me. 🎂❤️ The journey continues, and by God's
+          grace, I believe the best chapters are still ahead.
+        </strong>
+      </p>
+
+      <p>With a grateful heart,<br><strong>Levi 💛</strong></p>
+    </section>
+
+    <section class="card" id="mashujaa">
+      <div class="eyebrow">Honoring our heroes</div>
+      <h2>🇰🇪 Happy Mashujaa Day 🇰🇪</h2>
+
+      <div class="cake">🇰🇪 🌟 🕊️</div>
+
+      <p>
+        Today we celebrate the brave men and women who sacrificed for
+        our freedom, peace and future. Their courage reminds us that
+        every generation has a responsibility to build a better Kenya.
+      </p>
+
+      <p>
+        May we honor our heroes through unity, kindness, hard work,
+        integrity and service to our communities.
+      </p>
+
+      <p>
+        <strong>Happy Mashujaa Day to all Kenyans!</strong>
+      </p>
+    </section>
+
+    <section class="card" id="gift">
+      <div class="eyebrow">A little kindness</div>
+      <h2>Send a Little Birthday Love 🎁</h2>
+
+      <p>
+        Your presence and kind wishes mean a lot. If you would like to
+        send a gift, you can send it to my personal M-PESA number.
+      </p>
+
+      <div class="music-box">
+        <p><strong>M-PESA Number</strong></p>
+        <h2 id="mpesa-number">0799070844</h2>
+
+        <button class="btn" type="button" id="copy-mpesa">
+          📋 Copy M-PESA Number
+        </button>
+
+        <p id="mpesa-note" class="notice" aria-live="polite">
+          Tap the button to copy the number.
+        </p>
+
+        <p class="small">
+          Open M-PESA, select Send Money, enter the number, choose the
+          amount and confirm the recipient details before sending.
+        </p>
+      </div>
+    </section>
+
+    <section class="card" id="wishes">
+      <div class="eyebrow">A message from your heart to mine</div>
+      <h2>Leave Me a Birthday Wish 💌</h2>
+
+      <p>
+        One of the loveliest gifts you can give me is a message from
+        your heart. ❤️
+      </p>
+
+      <form id="wish-form">
+        <label for="sender">Your name</label>
+        <input id="sender" name="sender"
+               placeholder="Enter your name" required>
+
+        <label for="wish">Your birthday message for Levi</label>
+        <textarea id="wish" name="wish"
+          placeholder="Write your prayer, blessing or birthday wish..."
+          required></textarea>
+
+        <button class="btn" type="submit">💌 Send Birthday Wish</button>
+      </form>
+
+      <p id="response" role="status" aria-live="polite"></p>
+
+      <hr>
+
+      <h3>Birthday wishes 💛</h3>
+      <div id="wishes-list">
+        <p class="small">
+          Messages submitted on this page are displayed below.
+        </p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      Made with ❤️, faith and gratitude.<br>
+      © <span id="year">2026</span> Created by LEVI.
+      <p><a class="toplink" href="#top">↑ Back to top</a></p>
+    </footer>
+
+  </main>
+
+  <script>
+    // Live Kenya time and date.
+    function updateKenyaClock() {
+      const now = new Date();
+
+      document.getElementById("live-time").textContent =
+        new Intl.DateTimeFormat("en-GB", {
+          timeZone: "Africa/Nairobi",
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+          hour12: false
+        }).format(now);
+
+      document.getElementById("live-date").textContent =
+        new Intl.DateTimeFormat("en-GB", {
+          timeZone: "Africa/Nairobi",
+          weekday: "long",
+          day: "2-digit",
+          month: "long",
+          year: "numeric"
+        }).format(now);
+    }
+
+    updateKenyaClock();
+    setInterval(updateKenyaClock, 1000);
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    // Copy M-PESA number.
+    document.getElementById("copy-mpesa").addEventListener(
+      "click", async function() {
+        const number = document.getElementById("mpesa-number")
+          .textContent.trim();
+
+        const note = document.getElementById("mpesa-note");
+
+        try {
+          await navigator.clipboard.writeText(number);
+          note.textContent = "✅ M-PESA number copied: " + number;
+        } catch (error) {
+          note.textContent =
+            "Please press and hold the number below to copy it.";
+
+          const field = document.createElement("input");
+          field.value = number;
+          field.readOnly = true;
+          field.style.marginTop = "10px";
+          field.style.padding = "12px";
+          field.style.fontSize = "20px";
+
+          note.appendChild(document.createElement("br"));
+          note.appendChild(field);
+          field.focus();
+          field.select();
+        }
+      }
+    );
+
+    // Birthday wishes are displayed in this browser only.
+    // A shared guestbook requires a database or backend.
+    const form = document.getElementById("wish-form");
+    const response = document.getElementById("response");
+    const wishesList = document.getElementById("wishes-list");
+
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>"']/g, function(char) {
+        return {
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#039;"
+        }[char];
+      });
+    }
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const sender = document.getElementById("sender")
+        .value.trim();
+
+      const wish = document.getElementById("wish")
+        .value.trim();
+
+      if (!sender || !wish) {
+        response.textContent = "Please enter your name and message.";
+        return;
+      }
+
+      const item = document.createElement("div");
+      item.className = "music-box";
+      item.style.textAlign = "left";
+
+      item.innerHTML =
+        "<strong>" + escapeHtml(sender) + "</strong>" +
+        "<p style='white-space:pre-wrap'>" +
+        escapeHtml(wish) + "</p>" +
+        "<p class='small'>Birthday wishes for Levi 💛</p>";
+
+      wishesList.prepend(item);
+
+      response.textContent =
+        "🎉 Thank you, " + sender +
+        "! Your birthday wish has been added on this page. 💛";
+
+      form.reset();
+    });
+  </script>
+</body>
+  </html>
+  
