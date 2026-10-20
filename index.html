@@ -1,21 +1,17 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#210817">
-  <meta name="description" content="Celebrate life, growth and purpose with Levi. Happy Birthday and Happy Mashujaa Day!">
-  <title>Happy Birthday Levi 💖 | Happy Mashujaa Day 🇰🇪</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#7c3aed">
+  <title>Happy Birthday Levi!</title>
   <style>
     :root {
-      --wine: #210817;
-      --wine2: #3a0b27;
-      --gold: #f4cc72;
-      --gold2: #dca83e;
-      --pink: #f47ba6;
-      --cream: #fff0f3;
+      --purple: #7c3aed;
+      --pink: #ec4899;
+      --gold: #fbbf24;
+      --green: #168447;
+      --dark: #251044;
     }
 
     * { box-sizing: border-box; }
@@ -24,642 +20,429 @@
 
     body {
       margin: 0;
-      color: var(--cream);
-      font-family: Georgia, "Times New Roman", serif;
-      text-align: center;
-      background: radial-gradient(
-        ellipse at top,
-        #701b47 0%,
-        var(--wine2) 36%,
-        #13040e 100%
-      );
+      font-family: Arial, Helvetica, sans-serif;
+      color: white;
+      background: linear-gradient(135deg, #251044, #6d28d9, #db2777);
       min-height: 100vh;
+      overflow-x: hidden;
     }
 
-    .wrap {
-      width: min(760px, 100%);
-      margin: auto;
-      padding: 26px 15px 35px;
-    }
-
-    .panel, .card {
-      border: 1px solid rgba(244,204,114,.65);
-      border-radius: 28px;
-      background: rgba(25,3,17,.56);
-      box-shadow: 0 0 38px rgba(244,204,114,.07);
-      padding: clamp(22px, 5vw, 44px);
-      margin-bottom: 22px;
-    }
+    button, input { font: inherit; }
 
     .hero {
-      padding-top: 45px;
-      padding-bottom: 40px;
-      animation: heroEnter 1s ease-out both;
+      position: relative;
+      min-height: 88vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 55px 20px;
+      overflow: hidden;
     }
 
-    .heart {
-      color: var(--pink);
-      font-size: 48px;
-      line-height: 1;
-      margin-bottom: 26px;
-      animation: heartBeat 1.8s ease-in-out infinite;
-    }
-
-    .cake {
-      font-size: 76px;
-      margin: 25px 0;
-      animation: cakeBounce 2s ease-in-out infinite;
-      transform-origin: center bottom;
-    }
-
-    .card {
-      animation: cardEnter .8s ease-out both;
-    }
-
-    @keyframes heroEnter {
-      from { opacity: 0; transform: translateY(24px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes cardEnter {
-      from { opacity: 0; transform: translateY(18px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes heartBeat {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.18); }
-    }
-
-    @keyframes cakeBounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 750px;
     }
 
     .eyebrow {
-      color: var(--gold);
-      letter-spacing: .2em;
       text-transform: uppercase;
+      letter-spacing: 4px;
       font-size: 12px;
-      line-height: 1.8;
+      font-weight: bold;
+      color: #fde68a;
     }
 
     h1 {
-      color: var(--gold);
-      font-size: clamp(43px, 9vw, 70px);
-      line-height: 1.08;
-      font-weight: 500;
-      margin: 23px 0;
+      font-size: clamp(42px, 10vw, 82px);
+      margin: 18px 0;
+      line-height: 1.05;
+      text-shadow: 0 5px 25px #16052b80;
     }
 
-    h2 {
-      color: var(--gold);
-      font-size: clamp(25px, 5vw, 34px);
-      font-weight: 500;
-      margin: 12px 0 18px;
+    h1 span { color: #fcd34d; }
+
+    .hero p {
+      font-size: clamp(16px, 3vw, 21px);
+      line-height: 1.7;
+      color: #f5eaff;
     }
 
-    h3 {
-      color: var(--gold);
-      font-weight: 500;
+    .birthday-icon {
+      font-size: clamp(65px, 12vw, 100px);
+      animation: bounce 2s infinite;
     }
 
-    p {
-      font-size: 17px;
-      line-height: 1.8;
-    }
-
-    .quote {
-      font-size: clamp(20px, 4.5vw, 27px);
-      line-height: 1.6;
-      font-style: italic;
-      margin: 24px 0 30px;
-    }
-
-    .btn {
-      border: 0;
+    .primary-button {
+      display: inline-block;
+      border: none;
       border-radius: 999px;
-      padding: 15px 24px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      background: linear-gradient(110deg, #ffe59b, var(--gold2));
-      color: #351020;
-      font: 17px Georgia, serif;
+      padding: 15px 25px;
+      margin-top: 18px;
+      background: linear-gradient(90deg, #fbbf24, #fb7185);
+      color: #351044;
+      font-weight: bold;
       text-decoration: none;
       cursor: pointer;
-      margin: 5px;
+      box-shadow: 0 8px 25px #0003;
       transition: transform .2s;
     }
 
-    .btn:hover { transform: translateY(-2px); }
+    .primary-button:hover { transform: translateY(-3px); }
 
-    .btn.secondary {
-      background: transparent;
-      border: 1px solid var(--gold);
-      color: var(--gold);
-    }
-
-    hr {
-      border: 0;
-      border-top: 1px solid rgba(244,204,114,.4);
-      margin: 36px 0 25px;
-    }
-
-    section { scroll-margin-top: 16px; }
-
-    .emoji {
-      font-size: 28px;
-      letter-spacing: .18em;
-    }
-
-    .live-clock {
-      border: 1px solid var(--gold);
-      border-radius: 20px;
-      padding: 22px 14px;
-      margin: 20px auto;
-      background: rgba(43,10,30,.9);
-      max-width: 500px;
-    }
-
-    .clock-label {
-      color: var(--gold);
-      font-size: 12px;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-    }
-
-    #live-time {
-      color: var(--gold);
-      font-size: clamp(32px, 8vw, 48px);
-      font-weight: bold;
-      margin: 12px 0;
-      font-variant-numeric: tabular-nums;
-    }
-
-    #live-date {
-      font-size: clamp(15px, 4vw, 18px);
-    }
-
-    .small, .notice {
-      font-size: 13px;
-      color: #e8cbd7;
-    }
-
-    .music-box {
-      border: 1px solid rgba(244,204,114,.3);
-      border-radius: 20px;
-      padding: 22px;
-      background: rgba(255,255,255,.03);
-      margin-top: 18px;
-    }
-
-    .music-icon { font-size: 42px; }
-
-    .video-frame {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      overflow: hidden;
-      border-radius: 16px;
-      margin: 18px auto;
-      background: #000;
-    }
-
-    .video-frame iframe {
+    .balloon {
       position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
+      bottom: -150px;
+      width: 45px;
+      height: 58px;
+      border-radius: 50%;
+      opacity: .7;
+      animation: floatUp 12s linear infinite;
+      pointer-events: none;
     }
 
-    label {
+    .balloon::after {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 45px;
+      background: #ffffff80;
+      left: 50%;
+      top: 57px;
+    }
+
+    .b1 { left: 8%; background: #fb7185; animation-delay: 0s; }
+    .b2 { left: 25%; background: #fbbf24; animation-delay: 3s; }
+    .b3 { right: 22%; background: #34d399; animation-delay: 5s; }
+    .b4 { right: 7%; background: #60a5fa; animation-delay: 1s; }
+
+    section { scroll-margin-top: 20px; }
+
+    .content-section {
+      padding: 55px 18px;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 5vw, 42px);
+      margin: 0 0 15px;
+    }
+
+    .intro {
+      max-width: 650px;
+      margin: 0 auto 30px;
+      color: #f3e8ff;
+      line-height: 1.7;
+    }
+
+    .surprise-card {
+      max-width: 650px;
+      margin: 0 auto;
+      padding: 28px 22px;
+      background: #ffffff14;
+      border: 1px solid #ffffff35;
+      border-radius: 22px;
+      backdrop-filter: blur(8px);
+    }
+
+    #surpriseMessage {
+      display: none;
+      line-height: 1.8;
+      margin-top: 20px;
+      color: #fff7cc;
+    }
+
+    .gift-section {
+      padding: 45px 16px 60px;
+      background: #fff7ff;
+      color: #251044;
+    }
+
+    .gift-card {
+      max-width: 440px;
+      margin: 0 auto;
+      padding: 26px 22px;
+      background: white;
+      border-radius: 22px;
+      box-shadow: 0 12px 40px #3b07641c;
+    }
+
+    .gift-card h2 { margin-top: 0; }
+
+    .gift-card p {
+      color: #62556f;
+      line-height: 1.6;
+    }
+
+    .gift-card label {
       display: block;
       text-align: left;
-      margin: 15px 0 7px;
-      color: var(--gold);
-      font-size: 15px;
-    }
-
-    input, textarea {
-      width: 100%;
-      border-radius: 12px;
-      border: 1px solid rgba(244,204,114,.5);
-      background: #190511;
-      color: white;
-      padding: 13px;
-      font: 16px Arial, sans-serif;
-    }
-
-    textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-
-    .checkrow {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      text-align: left;
-      margin: 14px 0;
-      font: 13px Arial, sans-serif;
-      color: #f4dce6;
-    }
-
-    .checkrow input {
-      width: auto;
-      margin-top: 3px;
-    }
-
-    #response {
-      min-height: 24px;
-      color: var(--gold);
-    }
-
-    .footer {
-      padding: 8px;
-      color: #e9c6d5;
+      margin: 16px 0 7px;
       font-size: 14px;
+      font-weight: bold;
     }
 
-    .toplink { color: var(--gold); }
+    .gift-card input {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #d8cce5;
+      border-radius: 10px;
+      outline-color: var(--purple);
+      background: #fff;
+      color: #251044;
+    }
+
+    .pay-button {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      margin-top: 20px;
+      background: var(--green);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .pay-button:disabled {
+      opacity: .6;
+      cursor: wait;
+    }
+
+    #paymentMessage {
+      overflow-wrap: anywhere;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .security-note {
+      font-size: 12px !important;
+      color: #776b83 !important;
+    }
+
+    footer {
+      padding: 24px 12px;
+      text-align: center;
+      background: #1b0b30;
+      color: #f3e8ff;
+      font-size: 13px;
+    }
+
+    @keyframes floatUp {
+      from { transform: translateY(0) rotate(0); }
+      to { transform: translateY(-125vh) rotate(18deg); }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0) rotate(-4deg); }
+      50% { transform: translateY(-12px) rotate(4deg); }
+    }
 
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
-        animation: none !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
         scroll-behavior: auto !important;
-        transition: none !important;
       }
     }
   </style>
 </head>
-
 <body>
-  <main class="wrap">
 
-    <header class="panel hero" id="top">
-      <div class="heart">♡</div>
+  <header class="hero">
+    <div class="balloon b1"></div>
+    <div class="balloon b2"></div>
+    <div class="balloon b3"></div>
+    <div class="balloon b4"></div>
 
-      <div class="eyebrow">A little invitation from the heart</div>
-
-      <h1>Celebrate<br>with Levi</h1>
-
-      <div class="cake">🎂 ✨</div>
-
-      <p class="quote">
-        “Another year, another blessing.<br>
-        A grateful heart, a beautiful beginning.”
-      </p>
-
-      <a class="btn" href="#celebration">Open the Celebration ✨</a>
-
-      <hr>
-
-      <div class="eyebrow">Welcome to my special day</div>
-
+    <div class="hero-content">
+      <div class="birthday-icon" aria-hidden="true">🎂</div>
+      <div class="eyebrow">A special day • 20 October</div>
+      <h1>Happy Birthday<br><span>Levi!</span></h1>
       <p>
-        Thank you for being part of my story. May love, joy and God's
-        blessings find us all. 💛
+        Today is a celebration of life, love, happiness
+        and the beautiful journey ahead. May this new
+        chapter bring you success, peace and endless blessings.
+      </p>
+      <a class="primary-button" href="#surprise">Open Your Surprise ✨</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="content-section" id="surprise">
+      <h2 class="section-title">A Special Message 💌</h2>
+      <p class="intro">
+        Every birthday is a reminder that another year is
+        another opportunity to grow, dream and achieve more.
       </p>
 
-      <div class="live-clock">
-        <div class="clock-label">🇰🇪 Kenya Time · East Africa Time</div>
-        <div id="live-time">Loading time...</div>
-        <div id="live-date">Loading date...</div>
-        <p class="small">Live local time in Kenya</p>
-      </div>
-    </header>
-
-    <section class="card" id="celebration">
-      <div class="eyebrow">Celebrating life, growth and purpose</div>
-      <h2>🎂 Happy Birthday to Levi! 💖</h2>
-      <h2>🇰🇪 Happy Mashujaa Day! 🇰🇪</h2>
-      <div class="emoji">🎂 🌹 🎈 🇰🇪</div>
-
-      <p>
-        Today I celebrate another year of life. I am Levi, and my heart
-        is grateful to God for bringing me this far. Every lesson, every
-        challenge, every prayer and every person who has been part of my
-        journey has helped shape the person I am becoming.
-      </p>
-
-      <p>
-        <strong>A new chapter. A grateful heart. A future full of hope.</strong>
-      </p>
-    </section>
-
-    <section class="card" id="music">
-      <div class="eyebrow">A soundtrack for this special moment</div>
-      <h2>🎵 A Birthday Song 🎶</h2>
-
-      <div class="music-box">
-        <div class="music-icon">🎧 💖 🎶</div>
-        <h3>Birthday Prayer — Godswill James</h3>
-
-        <p class="small">
-          A birthday blessing for a beautiful new chapter.
-        </p>
-
-        <div class="video-frame">
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/IiNZeHV0an4"
-            title="Birthday Prayer — Godswill James"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
-        </div>
-
-        <p class="notice">
-          Tap the play button above to watch the birthday song.
-        </p>
-      </div>
-    </section>
-
-    <section class="card" id="blessing">
-      <div class="eyebrow">God's word for my new chapter</div>
-      <h2>A Blessing for My Life 🙏</h2>
-
-      <p class="quote">
-        “For I know the plans I have for you,” declares the LORD,
-        “plans to prosper you and not to harm you, plans to give you
-        hope and a future.”
-      </p>
-
-      <p class="small">Jeremiah 29:11 — NIV</p>
-
-      <p>
-        Heavenly Father, thank You for the precious gift of life and
-        for carrying me through every season. Thank You for the visible
-        blessings and the quiet victories that only You and I know about.
-      </p>
-
-      <p>
-        As I begin another year, give me wisdom when I must make difficult
-        decisions, courage when I feel afraid, strength when life becomes
-        heavy, and faith when I cannot see what lies ahead. Bless my family,
-        protect the people I love, and help me become a blessing to others.
-      </p>
-
-      <p>
-        May this new chapter be filled with purpose, peace, good health,
-        meaningful friendships and opportunities to grow. Keep my heart
-        humble and close to You. Amen. 💛
-      </p>
-    </section>
-
-    <section class="card" id="message">
-      <div class="eyebrow">A note from my heart</div>
-      <h2>A New Chapter, A Grateful Heart ❤️</h2>
-
-      <p>
-        Today is more than just my birthday. It is a reminder of how far
-        God has brought me, the battles He has helped me overcome, the
-        silent prayers He has heard, and the blessings that have kept
-        me going even when the journey was not easy.
-      </p>
-
-      <p>
-        Life has taught me that growing does not mean having everything
-        figured out. Sometimes it means standing up after disappointment,
-        learning from mistakes, and finding the courage to try again.
-        I am still growing, still learning, still dreaming and still
-        trusting God with my future.
-      </p>
-
-      <p>
-        To everyone who has been part of my story, through a prayer,
-        a kind word, a phone call, a visit or encouragement, thank you.
-        You may never fully know how much your presence has meant to me.
-      </p>
-
-      <p>
-        As I step into this new chapter, I pray for wisdom, courage,
-        strength, good health for my loved ones, and a heart that never
-        forgets where it came from.
-      </p>
-
-      <p>
-        May this year bring growth where there has been struggle, peace
-        where there has been worry, light where there has been uncertainty,
-        and beautiful opportunities where there have been closed doors.
-      </p>
-
-      <p>
-        <strong>
-          Happy birthday to me. 🎂❤️ The journey continues, and by God's
-          grace, I believe the best chapters are still ahead.
-        </strong>
-      </p>
-
-      <p>With a grateful heart,<br><strong>Levi 💛</strong></p>
-    </section>
-
-    <section class="card" id="mashujaa">
-      <div class="eyebrow">Honoring our heroes</div>
-      <h2>🇰🇪 Happy Mashujaa Day 🇰🇪</h2>
-
-      <div class="cake">🇰🇪 🌟 🕊️</div>
-
-      <p>
-        Today we celebrate the brave men and women who sacrificed for
-        our freedom, peace and future. Their courage reminds us that
-        every generation has a responsibility to build a better Kenya.
-      </p>
-
-      <p>
-        May we honor our heroes through unity, kindness, hard work,
-        integrity and service to our communities.
-      </p>
-
-      <p>
-        <strong>Happy Mashujaa Day to all Kenyans!</strong>
-      </p>
-    </section>
-
-    <section class="card" id="gift">
-      <div class="eyebrow">A little kindness</div>
-      <h2>Send a Little Birthday Love 🎁</h2>
-
-      <p>
-        Your presence and kind wishes mean a lot. If you would like to
-        send a gift, you can send it to my personal M-PESA number.
-      </p>
-
-      <div class="music-box">
-        <p><strong>M-PESA Number</strong></p>
-        <h2 id="mpesa-number">0799070844</h2>
-
-        <button class="btn" type="button" id="copy-mpesa">
-          📋 Copy M-PESA Number
+      <div class="surprise-card">
+        <div style="font-size:45px" aria-hidden="true">🎁</div>
+        <h3>Ready for your birthday surprise?</h3>
+        <p>Tap below to reveal your special message.</p>
+        <button class="primary-button" id="surpriseButton" type="button">
+          Reveal Message
         </button>
-
-        <p id="mpesa-note" class="notice" aria-live="polite">
-          Tap the button to copy the number.
-        </p>
-
-        <p class="small">
-          Open M-PESA, select Send Money, enter the number, choose the
-          amount and confirm the recipient details before sending.
+        <p id="surpriseMessage">
+          Dear Levi, may your new year of life be filled with
+          courage, good health, meaningful friendships,
+          open doors and dreams coming true. Keep believing
+          in yourself and keep moving forward. Happy Birthday! ❤️
         </p>
       </div>
     </section>
 
-    <section class="card" id="wishes">
-      <div class="eyebrow">A message from your heart to mine</div>
-      <h2>Leave Me a Birthday Wish 💌</h2>
+    <section class="gift-section" id="mpesa-gift">
+      <div class="gift-card">
+        <div style="font-size:45px" aria-hidden="true">🎁</div>
+        <h2>Send Levi a Birthday Gift</h2>
+        <p>
+          Want to send a birthday gift through M-PESA?
+          Enter your number and choose an amount below.
+        </p>
 
-      <p>
-        One of the loveliest gifts you can give me is a message from
-        your heart. ❤️
-      </p>
+        <form id="giftForm">
+          <label for="phone">M-PESA phone number</label>
+          <input
+            id="phone"
+            type="tel"
+            inputmode="tel"
+            autocomplete="tel"
+            placeholder="07XXXXXXXX"
+            maxlength="16"
+            required
+          >
 
-      <form id="wish-form">
-        <label for="sender">Your name</label>
-        <input id="sender" name="sender"
-               placeholder="Enter your name" required>
+          <label for="amount">Gift amount (KSh)</label>
+          <input
+            id="amount"
+            type="number"
+            min="1"
+            max="10000"
+            step="1"
+            value="100"
+            required
+          >
 
-        <label for="wish">Your birthday message for Levi</label>
-        <textarea id="wish" name="wish"
-          placeholder="Write your prayer, blessing or birthday wish..."
-          required></textarea>
+          <button class="pay-button" id="payButton" type="submit">
+            Pay with M-PESA
+          </button>
+        </form>
 
-        <button class="btn" type="submit">💌 Send Birthday Wish</button>
-      </form>
+        <p id="paymentMessage" role="status" aria-live="polite"></p>
 
-      <p id="response" role="status" aria-live="polite"></p>
-
-      <hr>
-
-      <h3>Birthday wishes 💛</h3>
-      <div id="wishes-list">
-        <p class="small">
-          Messages submitted on this page are displayed below.
+        <p class="security-note">
+          Only approve a payment you intentionally requested.
+          Never share your M-PESA PIN. Sandbox mode does not
+          transfer real money.
         </p>
       </div>
     </section>
-
-    <footer class="footer">
-      Made with ❤️, faith and gratitude.<br>
-      © <span id="year">2026</span> Created by LEVI.
-      <p><a class="toplink" href="#top">↑ Back to top</a></p>
-    </footer>
-
   </main>
 
+  <footer>
+    &copy; 2026 Made with ❤️ by Levi. All rights reserved.
+  </footer>
+
   <script>
-    // Live Kenya time and date.
-    function updateKenyaClock() {
-      const now = new Date();
+    // IMPORTANT:
+    // Replace this with your deployed backend's HTTPS URL.
+    // Do not put Daraja secrets or passkeys in this file.
+    const API_BASE = "https://YOUR-BACKEND-URL";
 
-      document.getElementById("live-time").textContent =
-        new Intl.DateTimeFormat("en-GB", {
-          timeZone: "Africa/Nairobi",
-          hour: "2-digit",
-          minute: "2-digit",
-          second: "2-digit",
-          hour12: false
-        }).format(now);
+    const surpriseButton = document.getElementById("surpriseButton");
+    const surpriseMessage = document.getElementById("surpriseMessage");
 
-      document.getElementById("live-date").textContent =
-        new Intl.DateTimeFormat("en-GB", {
-          timeZone: "Africa/Nairobi",
-          weekday: "long",
-          day: "2-digit",
-          month: "long",
-          year: "numeric"
-        }).format(now);
-    }
+    surpriseButton.addEventListener("click", () => {
+      surpriseMessage.style.display = "block";
+      surpriseButton.textContent = "Your Surprise ❤️";
+      surpriseButton.disabled = true;
+    });
 
-    updateKenyaClock();
-    setInterval(updateKenyaClock, 1000);
+    const form = document.getElementById("giftForm");
+    const payButton = document.getElementById("payButton");
+    const paymentMessage = document.getElementById("paymentMessage");
 
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
-
-    // Copy M-PESA number.
-    document.getElementById("copy-mpesa").addEventListener(
-      "click", async function() {
-        const number = document.getElementById("mpesa-number")
-          .textContent.trim();
-
-        const note = document.getElementById("mpesa-note");
-
-        try {
-          await navigator.clipboard.writeText(number);
-          note.textContent = "✅ M-PESA number copied: " + number;
-        } catch (error) {
-          note.textContent =
-            "Please press and hold the number below to copy it.";
-
-          const field = document.createElement("input");
-          field.value = number;
-          field.readOnly = true;
-          field.style.marginTop = "10px";
-          field.style.padding = "12px";
-          field.style.fontSize = "20px";
-
-          note.appendChild(document.createElement("br"));
-          note.appendChild(field);
-          field.focus();
-          field.select();
-        }
-      }
-    );
-
-    // Birthday wishes are displayed in this browser only.
-    // A shared guestbook requires a database or backend.
-    const form = document.getElementById("wish-form");
-    const response = document.getElementById("response");
-    const wishesList = document.getElementById("wishes-list");
-
-    function escapeHtml(value) {
-      return String(value).replace(/[&<>"']/g, function(char) {
-        return {
-          "&": "&amp;",
-          "<": "&lt;",
-          ">": "&gt;",
-          '"': "&quot;",
-          "'": "&#039;"
-        }[char];
-      });
-    }
-
-    form.addEventListener("submit", function(event) {
+    form.addEventListener("submit", async (event) => {
       event.preventDefault();
 
-      const sender = document.getElementById("sender")
-        .value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const amount = Number(document.getElementById("amount").value);
 
-      const wish = document.getElementById("wish")
-        .value.trim();
-
-      if (!sender || !wish) {
-        response.textContent = "Please enter your name and message.";
+      if (!phone) {
+        paymentMessage.textContent = "Please enter your M-PESA number.";
         return;
       }
 
-      const item = document.createElement("div");
-      item.className = "music-box";
-      item.style.textAlign = "left";
+      if (!Number.isInteger(amount) || amount < 1 || amount > 10000) {
+        paymentMessage.textContent =
+          "Enter a whole-number amount between KSh 1 and KSh 10,000.";
+        return;
+      }
 
-      item.innerHTML =
-        "<strong>" + escapeHtml(sender) + "</strong>" +
-        "<p style='white-space:pre-wrap'>" +
-        escapeHtml(wish) + "</p>" +
-        "<p class='small'>Birthday wishes for Levi 💛</p>";
+      if (API_BASE.includes("YOUR-BACKEND-URL")) {
+        paymentMessage.textContent =
+          "M-PESA setup is not finished yet. The secure backend must be deployed and connected first.";
+        return;
+      }
 
-      wishesList.prepend(item);
+      payButton.disabled = true;
+      paymentMessage.textContent = "Requesting M-PESA prompt…";
 
-      response.textContent =
-        "🎉 Thank you, " + sender +
-        "! Your birthday wish has been added on this page. 💛";
+      try {
+        const response = await fetch(`${API_BASE}/api/stkpush`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ phone, amount })
+        });
 
-      form.reset();
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(data.error || "The payment request failed.");
+        }
+
+        paymentMessage.textContent =
+          data.message || "Check your phone for the M-PESA prompt.";
+
+        // Check for a backend callback update.
+        for (let i = 0; i < 12; i++) {
+          await new Promise(resolve => setTimeout(resolve, 5000));
+
+          const statusResponse = await fetch(
+            `${API_BASE}/api/status/${encodeURIComponent(data.checkoutRequestId)}`
+          );
+
+          if (!statusResponse.ok) continue;
+
+          const statusData = await statusResponse.json();
+
+          if (statusData.status === "failed") {
+            paymentMessage.textContent =
+              "The payment was cancelled or failed. You can try again.";
+            return;
+          }
+
+          if (statusData.status === "callback_success_unverified") {
+            paymentMessage.textContent =
+              "Payment callback received. Final transaction verification is still required.";
+            return;
+          }
+        }
+
+        paymentMessage.textContent =
+          "The request was sent. Confirmation may take longer; check your M-PESA messages.";
+      } catch (error) {
+        paymentMessage.textContent =
+          error.message || "Unable to connect to the payment service.";
+      } finally {
+        payButton.disabled = false;
+      }
     });
   </script>
+
 </body>
-  </html>
-  
+</html>
