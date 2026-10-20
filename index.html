@@ -1,1 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Levi Kimutai!</title>
 
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ margin:0;font-family:Georgia,serif;color:#fff;text-align:center;
+ background:linear-gradient(135deg,#16002c,#430047,#101044);
+ overflow-x:hidden
+}
+header{padding:65px 18px 35px}
+h1{font-size:clamp(2.5rem,9vw,5rem);color:#ffd76a;margin:12px 0;text-shadow:0 0 25px #ff45b5}
+h2{color:#ffd76a}
+p{line-height:1.8}
+.hero{max-width:850px;margin:auto;padding:15px}
+.subtitle{font-size:1.15rem;color:#ffe8f6}
+section{
+ max-width:850px;margin:25px auto;padding:28px 22px;
+ width:92%;background:#ffffff12;border:1px solid #ffffff35;
+ border-radius:22px;box-shadow:0 8px 35px #0003
+}
+.cake{font-size:85px;animation:bounce 2s infinite}
+@keyframes bounce{50%{transform:translateY(-12px)}}
+button{
+ background:linear-gradient(90deg,#ff4ca0,#ffb84d);color:#2b0630;
+ font-size:1rem;font-weight:bold;border:0;border-radius:30px;
+ padding:13px 23px;cursor:pointer;margin:8px
+}
+button:hover{transform:scale(1.04)}
+.number{font-size:1.5rem;font-weight:bold;letter-spacing:2px;color:#8effd0}
+input,textarea{
+ width:100%;padding:13px;margin:8px 0;border-radius:10px;
+ border:1px solid #ddd;font-size:1rem
+}
+textarea{min-height:100px;resize:vertical}
+.wish{
+ background:#ffffff12;margin:12px 0;padding:14px;
+ border-radius:12px;text-align:left;overflow-wrap:anywhere
+}
+footer{padding:25px 10px;color:#f5cfe9}
+.heart{
+ position:fixed;bottom:-30px;z-index:-1;pointer-events:none;
+ animation:floatUp 7s linear forwards
+}
+@keyframes floatUp{
+ from{transform:translateY(0) rotate(0);opacity:.9}
+ to{transform:translateY(-110vh) rotate(360deg);opacity:0}
+}
+#message{color:#9effc5;min-height:25px}
+a{color:#ffd76a}
+</style>
+</head>
+
+<body>
+<header id="home" class="hero">
+<div style="font-size:22px">🎉 ✨ 🎂 ✨ 🎉</div>
+<p class="subtitle">A SPECIAL DAY • 20 OCTOBER</p>
+<h1>Happy Birthday<br>Levi Kimutai!</h1>
+<div class="cake">🎂</div>
+<p class="subtitle">Celebrating a wonderful life, a beautiful journey
+and a brighter tomorrow.</p>
+<button onclick="document.getElementById('celebration').scrollIntoView({behavior:'smooth'})">
+Celebrate With Me 🎉
+</button>
+</header>
+
+<section id="celebration">
+<h2>🎁 A Special Birthday Message</h2>
+<p>
+Today is a beautiful reminder that life is a gift. May this new year
+bring you happiness, good health, wisdom, success and countless reasons
+to smile.
+</p>
+<p>
+May every dream in your heart move closer to reality. May you find
+strength in difficult moments, peace in your journey and joy in every
+new opportunity.
+</p>
+<h2>🥳 Happy Birthday, Levi!</h2>
+<p>May your future shine brighter than ever before. Keep believing,
+keep growing and keep being the amazing person you are.</p>
+<div style="font-size:30px">❤️ 🎉 🥂 🎂 🎁</div>
+</section>
+
+<section>
+<h2>🙏 A Birthday Prayer</h2>
+<p>
+“May the Lord bless you and keep you; may the Lord make his face shine
+on you and be gracious to you.” — Numbers 6:24–25
+</p>
+<p>May God guide your steps, protect you and bless the work of your hands
+throughout this new chapter of life.</p>
+</section>
+
+<section id="gift">
+<h2>💚 Send a Birthday Gift</h2>
+<p>Your love, prayers and kind wishes mean a lot. If you would like to
+send a birthday gift through M-PESA, use the number below.</p>
+<div class="number" id="mpesaNumber">0799070844</div>
+<button id="copyButton" type="button" onclick="copyNumber()">
+📋 Copy M-PESA Number
+</button>
+<p id="message" role="status" aria-live="polite"></p>
+<p style="font-size:13px">Please confirm the recipient details on your
+M-PESA screen before completing any payment.</p>
+</section>
+
+<section id="wishes">
+<h2>💌 Leave Levi a Birthday Wish</h2>
+<p>Share a kind message for the birthday celebration.</p>
+<form id="wishForm">
+<input id="visitorName" type="text" maxlength="60"
+placeholder="Your name" required>
+<textarea id="visitorWish" maxlength="500"
+placeholder="Write your birthday wish here..." required></textarea>
+<button type="submit">Send Birthday Wish ❤️</button>
+</form>
+<div id="wishStatus" role="status"></div>
+<div id="wishList"></div>
+<p style="font-size:13px">
+Note: wishes entered here are displayed in this browser only.
+They are not automatically sent to Levi or saved online.
+</p>
+</section>
+
+<section>
+<h2>✨ Make a Wish!</h2>
+<p>May this new chapter bring new opportunities, unforgettable memories
+and blessings beyond expectations.</p>
+<button onclick="showSurprise()">Open Your Birthday Surprise 🎁</button>
+<p id="surprise"></p>
+</section>
+
+<footer>
+<div style="font-size:25px">🎂 ❤️ 🎉</div>
+<p>Made with ❤️ for Levi Kimutai</p>
+<p>© 2026 Levi. All Rights Reserved.</p>
+</footer>
+
+<script>
+function copyNumber(){
+ const number = document.getElementById("mpesaNumber").textContent.trim();
+ const status = document.getElementById("message");
+ const button = document.getElementById("copyButton");
+
+ function copied(){
+   status.textContent = "✅ M-PESA number copied: " + number;
+   button.textContent = "✅ Number Copied!";
+   setTimeout(()=>{
+     button.textContent = "📋 Copy M-PESA Number";
+   },2500);
+ }
+
+ if(navigator.clipboard && window.isSecureContext){
+   navigator.clipboard.writeText(number).then(copied).catch(()=>fallbackCopy(number));
+ }else{
+   fallbackCopy(number);
+ }
+
+ function fallbackCopy(text){
+   const field=document.createElement("textarea");
+   field.value=text;
+   field.setAttribute("readonly","");
+   field.style.position="fixed";
+   field.style.opacity="0";
+   document.body.appendChild(field);
+   field.select();
+   field.setSelectionRange(0,field.value.length);
+   let success=false;
+   try{success=document.execCommand("copy")}catch(e){}
+   field.remove();
+   if(success){
+     copied();
+   }else{
+     status.textContent="Copy unavailable. Press and hold the number to copy it: "+text;
+   }
+ }
+}
+
+document.getElementById("wishForm").addEventListener("submit",function(e){
+ e.preventDefault();
+ const name=document.getElementById("visitorName").value.trim();
+ const wish=document.getElementById("visitorWish").value.trim();
+ if(!name||!wish)return;
+
+ const card=document.createElement("div");
+ card.className="wish";
+ const heading=document.createElement("strong");
+ heading.textContent="💌 "+name;
+ const message=document.createElement("p");
+ message.textContent=wish;
+ card.append(heading,message);
+ document.getElementById("wishList").prepend(card);
+ document.getElementById("wishStatus").textContent="Your wish has been added to this page!";
+ this.reset();
+});
+
+function showSurprise(){
+ document.getElementById("surprise").textContent=
+ "🎉 Surprise, Levi! May your dreams come true and your days be filled with love, favour and happiness. Happy Birthday! ❤️";
+ for(let i=0;i<20;i++)createHeart();
+}
+
+function createHeart(){
+ const heart=document.createElement("span");
+ heart.className="heart";
+ heart.textContent=["❤️","💖","✨","🎉","💕"][Math.floor(Math.random()*5)];
+ heart.style.left=Math.random()*100+"vw";
+ heart.style.fontSize=(16+Math.random()*22)+"px";
+ heart.style.animationDuration=(5+Math.random()*5)+"s";
+ document.body.appendChild(heart);
+ setTimeout(()=>heart.remove(),10000);
+}
+setInterval(createHeart,900);
+</script>
+</body>
+  </html>
+  
