@@ -241,37 +241,6 @@
       html { scroll-behavior: auto; }
       .btn { transition: none; }
     }
-    .flower-burst {
-  position: fixed;
-  inset: 0;
-  z-index: 10000;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.wish-heart {
-  position: absolute;
-  bottom: -40px;
-  left: var(--left);
-  font-size: var(--size);
-  animation: floatFlower var(--duration) ease-out forwards;
-  filter: drop-shadow(0 3px 8px rgba(255, 100, 180, 0.5));
-}
-
-@keyframes floatFlower {
-  0% {
-    transform: translateY(0) rotate(0deg) scale(0.5);
-    opacity: 0;
-  }
-  15% {
-    opacity: 1;
-    transform: translateY(-15vh) rotate(30deg) scale(1.2);
-  }
-  100% {
-    transform: translateY(-110vh) rotate(360deg) scale(0.8);
-    opacity: 0;
-  }
-}
   </style>
 </head>
 
@@ -619,53 +588,6 @@
   });
 
   loadWishes();
-  function showWishCelebration() {
-  const layer = document.createElement("div");
-  layer.className = "wish-celebration flower-burst";
-  layer.setAttribute("aria-hidden", "true");
-
-  const flowers = [
-    "🌸", "🌺", "🌼", "🌷", "💐",
-    "🌹", "🌻", "💖", "✨", "💕"
-  ];
-
-  for (let i = 0; i < 50; i++) {
-    const flower = document.createElement("span");
-
-    flower.className = "wish-heart";
-    flower.textContent =
-      flowers[Math.floor(Math.random() * flowers.length)];
-
-    flower.style.setProperty(
-      "--left",
-      Math.random() * 100 + "vw"
-    );
-
-    flower.style.setProperty(
-      "--size",
-      22 + Math.random() * 25 + "px"
-    );
-
-    flower.style.setProperty(
-      "--duration",
-      2.5 + Math.random() * 2 + "s"
-    );
-
-    flower.style.animationDelay =
-      Math.random() * 0.4 + "s";
-
-    layer.appendChild(flower);
-  }
-
-  document.body.appendChild(layer);
-
-  setTimeout(() => layer.remove(), 5000);
-}
-
-// Show flowers immediately when Send is touched.
-document
-  .querySelector('#wish-form button[type="submit"]')
-  .addEventListener("click", showWishCelebration);
 </script>
 </body>
   </html>
