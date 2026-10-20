@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#210817">
-  <meta name="description" content="Celebrate life, growth and purpose with Levi.">
+  <meta name="description" content="Celebrate life, growth and purpose with Levi. Happy Birthday and Happy Mashujaa Day!">
   <title>Happy Birthday Levi 💖 | Happy Mashujaa Day 🇰🇪</title>
 
   <style>
@@ -45,8 +45,33 @@
     }
 
     .hero { padding-top: 45px; padding-bottom: 40px; }
-    .heart { color: var(--pink); font-size: 48px; line-height: 1; margin-bottom: 26px; }
-    .eyebrow { color: var(--gold); letter-spacing: .2em; text-transform: uppercase; font-size: 12px; line-height: 1.8; }
+
+    .profile-photo {
+      width: 190px;
+      height: 190px;
+      object-fit: cover;
+      object-position: center 35%;
+      border-radius: 50%;
+      border: 4px solid var(--gold);
+      box-shadow: 0 0 0 7px rgba(244,204,114,.13), 0 12px 32px rgba(0,0,0,.35);
+      display: block;
+      margin: 0 auto 24px;
+    }
+
+    .heart {
+      color: var(--pink);
+      font-size: 48px;
+      line-height: 1;
+      margin-bottom: 26px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      font-size: 12px;
+      line-height: 1.8;
+    }
 
     h1 {
       color: var(--gold);
@@ -64,9 +89,17 @@
     }
 
     h3 { color: var(--gold); font-weight: 500; }
+
     p { font-size: 17px; line-height: 1.8; }
+
     .cake { font-size: 72px; margin: 18px 0 22px; }
-    .quote { font-size: clamp(20px, 4.5vw, 27px); line-height: 1.6; font-style: italic; margin: 24px 0 30px; }
+
+    .quote {
+      font-size: clamp(20px, 4.5vw, 27px);
+      line-height: 1.6;
+      font-style: italic;
+      margin: 24px 0 30px;
+    }
 
     .btn {
       border: 0;
@@ -87,7 +120,22 @@
     }
 
     .btn:hover { transform: translateY(-2px); }
-    hr { border: 0; border-top: 1px solid rgba(244,204,114,.4); margin: 36px 0 25px; }
+
+    .btn.secondary {
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      box-shadow: none;
+    }
+
+    .btn:disabled { opacity: .6; cursor: wait; }
+
+    hr {
+      border: 0;
+      border-top: 1px solid rgba(244,204,114,.4);
+      margin: 36px 0 25px;
+    }
+
     section { scroll-margin-top: 16px; }
     .emoji { font-size: 28px; letter-spacing: .18em; }
 
@@ -100,9 +148,23 @@
       max-width: 500px;
     }
 
-    .clock-label { color: var(--gold); font-size: 12px; letter-spacing: .18em; text-transform: uppercase; }
-    #live-time { color: var(--gold); font-size: clamp(32px, 8vw, 48px); font-weight: bold; margin: 12px 0; font-variant-numeric: tabular-nums; }
+    .clock-label {
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    #live-time {
+      color: var(--gold);
+      font-size: clamp(32px, 8vw, 48px);
+      font-weight: bold;
+      margin: 12px 0;
+      font-variant-numeric: tabular-nums;
+    }
+
     #live-date { color: var(--cream); font-size: clamp(15px, 4vw, 18px); }
+
     .small, .notice { font-size: 13px; color: #e8cbd7; }
 
     .music-box {
@@ -152,7 +214,11 @@
     }
 
     textarea { min-height: 120px; resize: vertical; }
-    input:focus, textarea:focus { outline: 2px solid var(--pink); outline-offset: 2px; }
+
+    input:focus, textarea:focus {
+      outline: 2px solid var(--pink);
+      outline-offset: 2px;
+    }
 
     .checkrow {
       display: flex;
@@ -165,7 +231,9 @@
     }
 
     .checkrow input { width: auto; margin-top: 3px; }
+
     #response { min-height: 24px; color: var(--gold); }
+
     .footer { padding: 8px; color: #e9c6d5; font-size: 14px; }
     .toplink { color: var(--gold); }
 
@@ -173,6 +241,37 @@
       html { scroll-behavior: auto; }
       .btn { transition: none; }
     }
+    .flower-burst {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.wish-heart {
+  position: absolute;
+  bottom: -40px;
+  left: var(--left);
+  font-size: var(--size);
+  animation: floatFlower var(--duration) ease-out forwards;
+  filter: drop-shadow(0 3px 8px rgba(255, 100, 180, 0.5));
+}
+
+@keyframes floatFlower {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(0.5);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+    transform: translateY(-15vh) rotate(30deg) scale(1.2);
+  }
+  100% {
+    transform: translateY(-110vh) rotate(360deg) scale(0.8);
+    opacity: 0;
+  }
+}
   </style>
 </head>
 
@@ -180,20 +279,29 @@
 <main class="wrap">
 
   <header class="panel hero" id="top">
+    <img class="profile-photo"
+         src="levi_photo.png"
+         alt="Levi sitting in a chair, wearing a black hoodie">
+
     <div class="heart">♡</div>
     <div class="eyebrow">A little invitation from the heart</div>
     <h1>Celebrate<br>with Levi</h1>
     <div class="cake">🎂 ✨</div>
-    <p class="quote">“Another year, another blessing.<br>A grateful heart, a beautiful beginning.”</p>
+
+    <p class="quote">
+      “Another year, another blessing.<br>
+      A grateful heart, a beautiful beginning.”
+    </p>
 
     <a class="btn" href="#celebration">Open the Celebration ✨</a>
+
     <hr>
 
     <div class="eyebrow">Welcome to my special day</div>
     <p>Thank you for being part of my story. May love, joy and God's blessings find us all. 💛</p>
 
     <div class="live-clock">
-      <div class="clock-label">🇰🇪 Kenya Time · EAT</div>
+      <div class="clock-label">🇰🇪 Kenya Time · East Africa Time (EAT)</div>
       <div id="live-time">Loading time…</div>
       <div id="live-date">Loading date…</div>
       <p class="small">Live local time in Kenya</p>
@@ -203,53 +311,80 @@
   <section class="card" id="celebration">
     <div class="eyebrow">Celebrating life, growth and purpose</div>
     <h2>🎂 Happy Birthday to Levi! 💖</h2>
-    <h2>🇰🇪 Happy Mashujaa Day! 🇰🇪</h2>
+    <h2>🇰🇪 Happy Mashujaa Day to you! 🇰🇪</h2>
     <div class="emoji">🎂 🌹 🎈 🇰🇪</div>
-    <p>Today, 19 October, I celebrate another year of life. I am <strong>Levi</strong>, and my heart is grateful to God for bringing me this far. Every lesson, every challenge, every prayer and every person who has been part of my journey has helped shape the person I am becoming.</p>
+
+    <p>Today, I celebrate another year of life. I am <strong>Levi</strong>, and my heart is grateful to God for bringing me this far. Every lesson, every challenge, every prayer and every person who has been part of my journey has helped shape the person I am becoming.</p>
+
     <p><strong>A new chapter. A grateful heart. A future full of hope.</strong></p>
   </section>
 
   <section class="card" id="music">
     <div class="eyebrow">A soundtrack for this special moment</div>
     <h2>🎵 A Birthday Song 🎶</h2>
+
     <div class="music-box">
       <div class="music-icon">🎧 💖 🎶</div>
       <h3>Birthday Prayer — Godswill James</h3>
-      <p class="small">A birthday blessing for a beautiful new chapter.</p>
+      <p class="small">Godswill James’ birthday blessing for a beautiful new chapter.</p>
 
       <div class="video-frame">
         <iframe
           src="https://www.youtube-nocookie.com/embed/IiNZeHV0an4"
           title="Birthday Prayer — Godswill James"
           loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen>
         </iframe>
       </div>
-      <p class="notice">Tap play to watch the song here.</p>
+
+      <p class="notice">▶ Tap the play button on the video above to watch it here on the website.</p>
     </div>
   </section>
 
   <section class="card" id="blessing">
     <div class="eyebrow">God's word for my new chapter</div>
     <h2>A blessing for my life 🙏</h2>
+
     <p><em>“For I know the plans I have for you,” declares the LORD, “plans to prosper you and not to harm you, plans to give you hope and a future.”</em></p>
     <p class="small">Jeremiah 29:11 — NIV</p>
+
     <p>Heavenly Father, thank You for the precious gift of life and for carrying me through every season. Thank You for the visible blessings and the quiet victories that only You and I know about.</p>
+
     <p>As I begin another year, give me wisdom when I must make difficult decisions, courage when I feel afraid, strength when life becomes heavy, and faith when I cannot see what lies ahead. Bless my family, protect the people I love, guide my education and help me become a blessing to others.</p>
+
     <p>May this new chapter be filled with purpose, peace, good health, meaningful friendships and opportunities to grow. Above all, keep my heart humble and close to You. Amen. 💛</p>
   </section>
 
   <section class="card" id="message">
     <div class="eyebrow">A note from my heart</div>
     <h2>A New Chapter, A Grateful Heart ❤️</h2>
+
     <p>Today is more than just my birthday. It is a reminder of how far God has brought me, the battles He has helped me overcome, the silent prayers He has heard, and the blessings that have kept me going even when the journey was not easy.</p>
+
     <p>Life has taught me that growing does not mean having everything figured out. Sometimes it means standing up after disappointment, learning from mistakes, and finding the courage to try again. I am still growing, still learning, still dreaming and still trusting God with my future.</p>
+
     <p>To everyone who has been part of my story, whether through a prayer, a kind word, a phone call, a visit or encouragement, thank you. You may never fully know how much your presence has meant to me.</p>
+
     <p>As I step into this new chapter, I pray for wisdom, courage, strength, good health for my loved ones, and a heart that never forgets where it came from.</p>
+
     <p>May this year bring growth where there has been struggle, peace where there has been worry, light where there has been uncertainty, and beautiful opportunities where there have been closed doors.</p>
+
     <p><strong>Happy birthday to me. 🎂❤️ The journey continues, and by God's grace, I believe the best chapters are still ahead.</strong></p>
     <p>With a grateful heart,<br><strong>Levi 💛</strong></p>
+  </section>
+
+  <section class="card" id="birthday-poster">
+    <div class="eyebrow">A special birthday and Mashujaa Day tribute</div>
+    <h2>My Birthday &amp; Mashujaa Day 🇰🇪</h2>
+    <p>Celebrating my journey, honoring our heroes, and looking forward to brighter days.</p>
+
+    <img
+      src="mashujaa_poster.png"
+      alt="Birthday and Mashujaa Day poster featuring Levi and the Kenyan flag"
+      style="display:block;width:100%;height:auto;max-width:900px;margin:20px auto;border-radius:18px;border:1px solid rgba(244,204,114,.65);box-shadow:0 8px 28px rgba(0,0,0,.25);"
+      loading="lazy">
   </section>
 
   <section class="card" id="gift">
@@ -259,20 +394,15 @@
 
     <div class="music-box">
       <p><strong>M-PESA number</strong></p>
-      <h2 id="mpesa-number" style="overflow-wrap:anywhere">0799070844</h2>
+      <h2 id="mpesa-number">0799070844</h2>
 
-      <button class="btn" type="button" id="copy-mpesa">
-        📋 Copy M-PESA Number
-      </button>
+      <button class="btn" type="button" id="copy-mpesa">📋 Copy M-PESA Number</button>
 
       <p id="mpesa-note" class="notice" role="status" aria-live="polite">
-        Tap the button to copy the number.
+        Tap the button to copy the number. If copying is blocked, press and hold the number field shown below.
       </p>
 
-      <p class="small">
-        To send a gift: open M-PESA → Send Money → enter the number above
-        → enter the amount → confirm the recipient name in M-PESA.
-      </p>
+      <p class="small">To send a gift: open M-PESA → Send Money → enter the number above → enter the amount → confirm the recipient name in M-PESA.</p>
     </div>
   </section>
 
@@ -280,39 +410,41 @@
     <div class="eyebrow">A message from your heart to mine</div>
     <h2>Leave Me a Birthday Wish 💌</h2>
     <p>One of the loveliest gifts you can give me is a message from your heart. ❤️</p>
+
     <p class="small">
       💌 Share a birthday wish, prayer, or blessing.<br>
       😊 Add your name so I know who sent it.<br>
-      📱 Your WhatsApp number is optional.
+      📱 Your WhatsApp number is optional.<br>
+      💛 Wishes can appear here for all visitors after Supabase is configured.
     </p>
 
     <form id="wish-form">
       <label for="sender">Your name</label>
-      <input id="sender" name="sender" placeholder="Enter your name" maxlength="80" required>
+      <input id="sender" name="sender" placeholder="Enter your name" autocomplete="name" maxlength="80" required>
 
       <label for="whatsapp">Your WhatsApp number (optional)</label>
-      <input id="whatsapp" name="whatsapp" type="tel" placeholder="e.g. +254 7XX XXX XXX" maxlength="30">
+      <input id="whatsapp" name="whatsapp" type="tel" placeholder="e.g. +254 7XX XXX XXX" autocomplete="tel" maxlength="30">
 
       <label for="wish">Your birthday message for Levi</label>
-      <textarea id="wish" name="wish" maxlength="1500" placeholder="Write your birthday wish here..." required></textarea>
+      <textarea id="wish" name="wish" placeholder="Write your prayer, blessing, memory or birthday wish here..." maxlength="1500" required></textarea>
 
       <div class="checkrow">
         <input id="privacy" type="checkbox" required>
-        <label for="privacy" style="margin:0;color:#f4dce6">
-          I agree that my birthday wish will be displayed publicly on this website.
-        </label>
+        <label for="privacy" style="margin:0;color:#f4dce6">I agree that my birthday wish will be displayed publicly on this website.</label>
       </div>
 
       <button class="btn" type="submit">💌 Send Birthday Wish</button>
     </form>
 
     <p id="response" role="status" aria-live="polite"></p>
+
     <hr>
     <h3>Birthday wishes 💛</h3>
     <div id="wishes-list" aria-live="polite">
-      <p class="small">The shared wishes board needs to be connected to Supabase.</p>
+      <p class="small">Loading birthday wishes…</p>
     </div>
-    <p class="notice">Do not enter private or sensitive information.</p>
+
+    <p class="notice">Messages are public on this page. Do not enter private information.</p>
   </section>
 
   <footer class="footer">
@@ -324,9 +456,8 @@
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
 <script>
-  // LIVE KENYA CLOCK
+  // Live clock and date for Kenya.
   function updateKenyaClock() {
     const now = new Date();
 
@@ -352,57 +483,36 @@
   updateKenyaClock();
   setInterval(updateKenyaClock, 1000);
 
-  // COPY M-PESA NUMBER
-  const copyButton = document.getElementById("copy-mpesa");
-  const mpesaNumberElement = document.getElementById("mpesa-number");
-  const mpesaNote = document.getElementById("mpesa-note");
+  // M-PESA copy button with manual-copy fallback for mobile browsers.
+  const mpesaNumber = document.getElementById("mpesa-number").textContent.trim();
 
-  copyButton.addEventListener("click", async function () {
-    const number = mpesaNumberElement.textContent.trim();
+  document.getElementById("copy-mpesa").addEventListener("click", async function() {
+    const note = document.getElementById("mpesa-note");
 
-    // Modern clipboard API works on HTTPS in supported browsers.
     try {
       if (navigator.clipboard && window.isSecureContext) {
-        await navigator.clipboard.writeText(number);
-        mpesaNote.textContent =
-          "✅ Number copied: " + number + ". You can now paste it into M-PESA.";
+        await navigator.clipboard.writeText(mpesaNumber);
+        note.textContent = "Copied: " + mpesaNumber + ". Open M-PESA and choose Send Money.";
         return;
       }
     } catch (error) {
-      // If copying fails, continue to the manual-copy option.
+      // Use the manual-copy fallback below.
     }
 
-    // Fallback for browsers that block clipboard access.
-    mpesaNote.textContent =
-      "Automatic copying is blocked. Press and hold the number below, then choose Copy.";
+    note.innerHTML =
+      "Automatic copying is blocked by this browser. Press and hold the number below, then tap Copy:" +
+      '<br><input id="mpesa-manual-copy" aria-label="M-PESA number to copy" readonly value="' +
+      mpesaNumber +
+      '" style="display:block;width:100%;margin-top:10px;text-align:center;font-size:20px;letter-spacing:1px;background:#fff;color:#210817;border:2px solid #f4cc72;border-radius:10px;padding:12px;user-select:all;-webkit-user-select:all">';
 
-    let manualField = document.getElementById("mpesa-manual-copy");
-
-    if (!manualField) {
-      manualField = document.createElement("input");
-      manualField.id = "mpesa-manual-copy";
-      manualField.type = "text";
-      manualField.value = number;
-      manualField.readOnly = true;
-      manualField.setAttribute("aria-label", "M-PESA number to copy");
-
-      manualField.style.cssText =
-        "display:block;width:100%;margin-top:12px;text-align:center;" +
-        "font-size:22px;background:#fff;color:#210817;border:2px solid #f4cc72;" +
-        "border-radius:10px;padding:12px;user-select:all;-webkit-user-select:all;";
-
-      mpesaNote.insertAdjacentElement("afterend", manualField);
-    }
-
-    manualField.value = number;
-    manualField.focus();
-    manualField.select();
-    manualField.setSelectionRange(0, number.length);
+    const field = document.getElementById("mpesa-manual-copy");
+    field.focus();
+    field.select();
+    field.setSelectionRange(0, field.value.length);
   });
 
-  // SUPABASE SHARED BIRTHDAY WISHES
-  // Replace these placeholders with your Supabase project URL and publishable/anon key.
-  const SUPABASE_URL = "const SUPABASE_URL = "https://zbgziuprapaeadodjdeh.supabase.co";";
+  // Supabase settings. Use the project URL and Publishable key only.
+  const SUPABASE_URL = "https://zbgziuprapaeadodjdeh.supabase.co";
   const SUPABASE_ANON_KEY = "sb_publishable_T6LF71KZ68T96HSeFahogw_iBLMPdle";
 
   const wishesList = document.getElementById("wishes-list");
@@ -410,7 +520,7 @@
   let wishesClient = null;
 
   function escapeHtml(value) {
-    return String(value).replace(/[&<>"']/g, function (char) {
+    return String(value).replace(/[&<>"']/g, function(char) {
       return {
         "&": "&amp;",
         "<": "&lt;",
@@ -421,23 +531,10 @@
     });
   }
 
-  const supabaseConfigured =
-    SUPABASE_URL.startsWith("https://") &&
-    !SUPABASE_URL.includes("PASTE_YOUR") &&
-    SUPABASE_ANON_KEY.length > 20 &&
-    !SUPABASE_ANON_KEY.includes("PASTE_YOUR");
-
-  if (supabaseConfigured && window.supabase) {
-    wishesClient = window.supabase.createClient(
-      SUPABASE_URL,
-      SUPABASE_ANON_KEY
-    );
-  }
-
   async function loadWishes() {
     if (!wishesClient) {
       wishesList.innerHTML =
-        '<p class="small">The shared wishes board is not connected yet. Connect your Supabase project to activate it.</p>';
+        '<p class="small">The shared wishes board is not connected yet. Check the Supabase setup and API key.</p>';
       return;
     }
 
@@ -449,7 +546,7 @@
 
     if (error) {
       wishesList.innerHTML =
-        '<p class="small">Could not load wishes. Check your Supabase table and access policies.</p>';
+        '<p class="small">Could not load wishes yet. Check the Supabase table and policies.</p>';
       return;
     }
 
@@ -459,7 +556,7 @@
       return;
     }
 
-    wishesList.innerHTML = data.map(function (item) {
+    wishesList.innerHTML = data.map(function(item) {
       const date = new Intl.DateTimeFormat("en-GB", {
         timeZone: "Africa/Nairobi",
         dateStyle: "medium",
@@ -469,12 +566,17 @@
       return '<div class="music-box" style="text-align:left">' +
         '<strong>' + escapeHtml(item.sender) + '</strong>' +
         '<p style="white-space:pre-wrap">' + escapeHtml(item.wish) + '</p>' +
-        '<p class="small">' + escapeHtml(date) + '</p>' +
-        '</div>';
+        '<p class="small">' + escapeHtml(date) + '</p></div>';
     }).join("");
   }
 
-  document.getElementById("wish-form").addEventListener("submit", async function (event) {
+  if (window.supabase) {
+    wishesClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  } else {
+    responseMessage.textContent = "The wishes service could not load. Check your internet connection and try again.";
+  }
+
+  document.getElementById("wish-form").addEventListener("submit", async function(event) {
     event.preventDefault();
 
     const sender = document.getElementById("sender").value.trim();
@@ -484,38 +586,32 @@
     if (!sender || !wish) return;
 
     if (!wishesClient) {
-      responseMessage.textContent =
-        "The wishes board is not connected yet. Add your Supabase project URL and publishable key to the code.";
+      responseMessage.textContent = "The shared wishes board is not connected. Check the Supabase setup.";
       return;
     }
 
     const submitButton = this.querySelector('button[type="submit"]');
     submitButton.disabled = true;
     submitButton.textContent = "Sending…";
+    responseMessage.textContent = "";
 
     try {
-      const { error } = await wishesClient
-        .from("birthday_wishes")
-        .insert({
-          sender: sender.slice(0, 80),
-          whatsapp: whatsapp.slice(0, 30) || null,
-          wish: wish.slice(0, 1500)
-        });
+      const { error } = await wishesClient.from("birthday_wishes").insert({
+        sender: sender.slice(0, 80),
+        whatsapp: whatsapp.slice(0, 30) || null,
+        wish: wish.slice(0, 1500)
+      });
 
       if (error) {
-        responseMessage.textContent =
-          "Sorry, your wish could not be saved. Please check the Supabase setup.";
+        responseMessage.textContent = "Sorry, the wish could not be saved. Check the Supabase table and permissions.";
         return;
       }
 
-      responseMessage.textContent =
-        "Thank you, " + sender + "! Your birthday wish has been added. 💛";
-
+      responseMessage.textContent = "Thank you, " + sender + "! Your wish has been added to the website. 💛";
       this.reset();
       await loadWishes();
     } catch (error) {
-      responseMessage.textContent =
-        "Something went wrong. Please check your internet connection and try again.";
+      responseMessage.textContent = "A connection error occurred. Please check your internet and try again.";
     } finally {
       submitButton.disabled = false;
       submitButton.textContent = "💌 Send Birthday Wish";
@@ -523,6 +619,53 @@
   });
 
   loadWishes();
+  function showWishCelebration() {
+  const layer = document.createElement("div");
+  layer.className = "wish-celebration flower-burst";
+  layer.setAttribute("aria-hidden", "true");
+
+  const flowers = [
+    "🌸", "🌺", "🌼", "🌷", "💐",
+    "🌹", "🌻", "💖", "✨", "💕"
+  ];
+
+  for (let i = 0; i < 50; i++) {
+    const flower = document.createElement("span");
+
+    flower.className = "wish-heart";
+    flower.textContent =
+      flowers[Math.floor(Math.random() * flowers.length)];
+
+    flower.style.setProperty(
+      "--left",
+      Math.random() * 100 + "vw"
+    );
+
+    flower.style.setProperty(
+      "--size",
+      22 + Math.random() * 25 + "px"
+    );
+
+    flower.style.setProperty(
+      "--duration",
+      2.5 + Math.random() * 2 + "s"
+    );
+
+    flower.style.animationDelay =
+      Math.random() * 0.4 + "s";
+
+    layer.appendChild(flower);
+  }
+
+  document.body.appendChild(layer);
+
+  setTimeout(() => layer.remove(), 5000);
+}
+
+// Show flowers immediately when Send is touched.
+document
+  .querySelector('#wish-form button[type="submit"]')
+  .addEventListener("click", showWishCelebration);
 </script>
 </body>
   </html>
